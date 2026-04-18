@@ -15,11 +15,7 @@
     }
   },
   "files": [
-    "dist/",
-    "src",
-    "tsconfig.json",
-    "tsconfig.build-cjs.json",
-    "tsconfig.build-esm.json"
+    "dist/"
   ],
   "publishConfig": {
     "access": "public"

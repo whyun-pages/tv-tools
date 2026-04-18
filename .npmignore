@@ -9,5 +9,6 @@ test
 *.zip
 .prettierrc.json
 eslint.config.mjs
-
+tsconfig*.json
+src
 

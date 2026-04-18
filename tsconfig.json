@@ -6,6 +6,7 @@
     "declaration": true,
     "target": "ES2021",
     "sourceMap": true,
+    "rootDir": ".",
     "outDir": "./dist",
     "esModuleInterop": true,
     "incremental": true,
