@@ -1,0 +1,19 @@
+{
+  "exclude": ["node_modules", "dist", "coverage"],
+  "compilerOptions": {
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "declaration": true,
+    "target": "ES2021",
+    "sourceMap": true,
+    "outDir": "./dist",
+    "esModuleInterop": true,
+    "incremental": true,
+    "ignoreDeprecations": "6.0",
+    "skipLibCheck": true,
+    "strict": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "types": ["node", "vitest/globals"]
+  }
+}

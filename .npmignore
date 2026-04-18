@@ -1,0 +1,13 @@
+.github
+.vscode
+.gitignore
+.idea
+docs
+coverage
+test
+*.log
+*.zip
+.prettierrc.json
+eslint.config.mjs
+
+
