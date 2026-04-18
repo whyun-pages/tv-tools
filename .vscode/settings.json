@@ -10,5 +10,8 @@
     "source.fixAll.eslint": "explicit",
     "source.organizeImports": "explicit"
   },
-  "vitest.cliArguments": "--test-timeout=1000000"
+  "vitest.cliArguments": "--test-timeout=1000000",
+  "cSpell.words": [
+    "Feng"
+  ]
 }

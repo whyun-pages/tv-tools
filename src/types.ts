@@ -24,19 +24,31 @@ export interface TVBoxConfig {
   ads?: string[];
   /** 其他扩展字段 */
 }
-
-// 直播源 (lives)
-export interface Live {
+export interface LiveChannel {
   name: string;
-  type?: number; // 0 = m3u 等
+  urls: string[]; // 支持 "url" 或 "url$名称"
+  epg?: string;
+}
+export interface LiveClassic {
+  group: string;
+  channels: LiveChannel[];
+}
+
+export interface LiveFengMi {
+  type: number; // 0 = m3u,txt 等; 1 直播地址在channels里
   url: string; // m3u/txt 地址
   playerType?: number; // 1 或 2
+}
+export type LiveImpl = LiveClassic | LiveFengMi;
+// 直播源 (lives)
+export type Live = LiveImpl & {
+  name?: string;
   epg?: string; // EPG 模板
   logo?: string;
   ua?: string;
   /** 多线路时使用 */
   ext?: Recordable;
-}
+};
 
 // 站点/资源源 (sites) —— 最常用
 export interface Site {
