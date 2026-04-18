@@ -21,6 +21,13 @@
     "tsconfig.build-cjs.json",
     "tsconfig.build-esm.json"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/whyun-pages/tv-tools.git"
+  },
   "scripts": {
     "clean": "rimraf dist coverage",
     "build:cjs": "rimraf dist/cjs && tsc -p tsconfig.build-cjs.json",
