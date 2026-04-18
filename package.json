@@ -3,15 +3,20 @@
   "version": "0.1.4",
   "description": "TypeScript utilities for decoding TVBox JSON payloads",
   "license": "MIT",
-  "main": "dist/cjs/index.cjs",
-  "module": "dist/esm/index.mjs",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
   "source": "src/index.ts",
   "exports": {
     ".": {
-      "types": "./dist/esm/index.d.ts",
-      "import": "./dist/esm/index.mjs",
-      "require": "./dist/cjs/index.cjs"
+      "import": {
+        "types": "./dist/esm/index.d.ts",
+        "default": "./dist/esm/index.js"
+      },
+      "require": {
+        "types": "./dist/cjs/index.d.ts",
+        "default": "./dist/cjs/index.js"
+      }
     }
   },
   "files": [
@@ -26,8 +31,8 @@
   },
   "scripts": {
     "clean": "rimraf dist coverage",
-    "build:cjs": "rimraf dist/cjs && tsc -p tsconfig.build-cjs.json && node scripts/rewrite-dist-extensions.mjs dist/cjs cjs",
-    "build:esm": "rimraf dist/esm && tsc -p tsconfig.build-esm.json && node scripts/rewrite-dist-extensions.mjs dist/esm mjs",
+    "build:cjs": "rimraf dist/cjs && tsc --project tsconfig.build-cjs.json",
+    "build:esm": "rimraf dist/esm && tsc --project tsconfig.build-esm.json",
     "build": "pnpm run clean && pnpm run build:cjs && pnpm run build:esm",
     "lint": "eslint . --ext .ts",
     "lint:fix": "eslint . --ext .ts --fix",

@@ -1,5 +1,6 @@
 export type Recordable = Record<string, unknown>;
-// TVBox 主配置接口
+
+/** TVBox 主配置接口 */
 export interface TVBoxConfig {
   /** 配置名称/作者信息 */
   name?: string;
@@ -24,11 +25,13 @@ export interface TVBoxConfig {
   ads?: string[];
   /** 其他扩展字段 */
 }
+
 export interface LiveChannel {
   name: string;
   urls: string[]; // 支持 "url" 或 "url$名称"
   epg?: string;
 }
+
 export interface LiveClassic {
   group: string;
   channels: LiveChannel[];
@@ -39,8 +42,10 @@ export interface LiveFengMi {
   url: string; // m3u/txt 地址
   playerType?: number; // 1 或 2
 }
+
 export type LiveImpl = LiveClassic | LiveFengMi;
-// 直播源 (lives)
+
+/** 直播源 (lives) */
 export type Live = LiveImpl & {
   name?: string;
   epg?: string; // EPG 模板
@@ -50,7 +55,7 @@ export type Live = LiveImpl & {
   ext?: Recordable;
 };
 
-// 站点/资源源 (sites) —— 最常用
+/** 站点/资源源 (sites) —— 最常用 */
 export interface Site {
   key: string; // 唯一标识
   name: string; // 显示名称
@@ -72,7 +77,7 @@ export interface Site {
   indexs?: number;
 }
 
-// 解析接口 (parses)
+/** 解析接口 (parses) */
 export interface Parse {
   name: string;
   url: string; // 解析服务器地址
@@ -80,7 +85,7 @@ export interface Parse {
   ext?: Recordable;
 }
 
-// 规则 (rules) —— 嗅探、点击等
+/** 规则 (rules) —— 嗅探、点击等 */
 export interface Rule {
   name: string; // sniffer / click 等
   hosts: string[]; // 生效域名
@@ -88,19 +93,9 @@ export interface Rule {
   script?: string[]; // 点击脚本
 }
 
-// DOH 配置
+/** DOH 配置 */
 export interface Doh {
   name: string;
   url: string;
   ips?: string[];
 }
-
-// 示例使用
-// export interface TVBoxSiteExample extends Site {
-//   ext?: {
-//     CloudDrive?: string;
-//     from?: string;
-//     siteUrl?: string;
-//     danMu?: string;
-//   };
-// }

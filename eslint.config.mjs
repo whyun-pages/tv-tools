@@ -21,7 +21,7 @@ const customRules = {
 
 export default defineConfig([
   {
-    ignores: ['dist/', 'coverage/', 'eslint.config.mjs', 'scripts/**/*.mjs'],
+    ignores: ['dist/', 'coverage/', 'eslint.config.mjs'],
   },
   js.configs.recommended,
   ...tseslint.configs.recommendedTypeChecked,

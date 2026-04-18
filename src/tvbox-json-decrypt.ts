@@ -1,5 +1,5 @@
 import { createDecipheriv } from 'node:crypto';
-import { TVBoxConfig } from './types.js';
+import type { TVBoxConfig } from './types';
 
 const TVBOX_PREFIX_PATTERN = /[A-Za-z0-9]{8}\*\*/;
 

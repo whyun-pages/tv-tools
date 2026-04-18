@@ -7,6 +7,7 @@
     "moduleResolution": "node",
     "sourceMap": true,
     "declaration": true,
+    "declarationMap": true,
     "removeComments": false,
     "stripInternal": true,
     "rootDir": "src",
