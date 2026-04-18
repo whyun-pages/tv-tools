@@ -3,15 +3,15 @@
   "version": "0.1.1",
   "description": "TypeScript utilities for decoding TVBox JSON payloads",
   "license": "MIT",
-  "main": "dist/cjs/index.js",
-  "module": "dist/esm/index.js",
+  "main": "dist/cjs/index.cjs",
+  "module": "dist/esm/index.mjs",
   "types": "dist/esm/index.d.ts",
   "source": "src/index.ts",
   "exports": {
     ".": {
       "types": "./dist/esm/index.d.ts",
-      "import": "./dist/esm/index.js",
-      "require": "./dist/cjs/index.js"
+      "import": "./dist/esm/index.mjs",
+      "require": "./dist/cjs/index.cjs"
     }
   },
   "files": [
@@ -30,8 +30,8 @@
   },
   "scripts": {
     "clean": "rimraf dist coverage",
-    "build:cjs": "rimraf dist/cjs && tsc -p tsconfig.build-cjs.json",
-    "build:esm": "rimraf dist/esm && tsc -p tsconfig.build-esm.json",
+    "build:cjs": "rimraf dist/cjs && tsc -p tsconfig.build-cjs.json && node scripts/rewrite-dist-extensions.mjs dist/cjs cjs",
+    "build:esm": "rimraf dist/esm && tsc -p tsconfig.build-esm.json && node scripts/rewrite-dist-extensions.mjs dist/esm mjs",
     "build": "pnpm run clean && pnpm run build:cjs && pnpm run build:esm",
     "lint": "eslint . --ext .ts",
     "lint:fix": "eslint . --ext .ts --fix",
