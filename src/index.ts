@@ -1,2 +1,2 @@
 export { decodeTvboxJson, parseTvboxJson } from './tvbox-json-decrypt';
-export * from './types';
+export type * from './types';
